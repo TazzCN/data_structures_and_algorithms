@@ -5,14 +5,14 @@ function validAnagram(first, second) {
 
     const lookup = {};
 
-    for (let i = 0; i < first.length; i++) {
+    for (let i = 0; i < first.length - 1; i++) {
         let letter = first[i];
         // if letter exists, increment, otherwise set to 1
         lookup[letter] ? lookup[letter] += 1 : lookup[letter] = 1;
     }
     console.log(lookup)
 
-    for (let i = 0; i < second.length; i++) {
+    for (let i = 0; i < second.length - 1; i++) {
         let letter = second[i];
         // can't find letter or letter is zero then it's not an anagram
         if (!lookup[letter]) {
